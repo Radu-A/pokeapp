@@ -12,14 +12,12 @@
 .card-title {
     width: 100%;
     @include flex-row;
-    justify-content: space-between;
     // gap: 1rem;
     color: $blue;
 }
 
 .card-title h2 {
-    padding: 0;
-    margin: 0;
+    text-align: center;
 }
 
 .card-article th {

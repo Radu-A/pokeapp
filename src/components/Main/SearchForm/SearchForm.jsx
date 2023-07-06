@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-const Search = ({list, setList}) => {
+const SearchForm = ({list, setList}) => {
 
   const [name, setName] = useState('');
   const [inputValue, setInputValue] = useState('');
@@ -35,6 +35,13 @@ const Search = ({list, setList}) => {
   const handleChange = (event)=> {
     event.preventDefault();
     setInputValue(event.target.value);
+    if (inputValue !== '') {
+      setTimeout(() => {
+        const searchName = event.target.name.value.toLowerCase()
+        setName(searchName);
+        setInputValue('');
+      }, 3000);
+    }
   }
 
   return (
@@ -49,4 +56,4 @@ const Search = ({list, setList}) => {
   );
 };
 
-export default Search;
+export default SearchForm;

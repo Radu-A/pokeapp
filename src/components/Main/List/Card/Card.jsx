@@ -8,8 +8,7 @@ const Card = ({pokemon}) => {
       <>
         <article className="card-article">
           <div className="card-title">
-            <h2>{pokemon.name}</h2>
-            <h4>id: {pokemon.id}</h4>
+            <h3>{pokemon.name}</h3>
           </div>
           <div className="card-image">
             <img src={pokemon.sprites.other["official-artwork"].front_default} alt="" />
