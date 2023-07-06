@@ -1,0 +1,20 @@
+@import '../utils/variables.scss';
+@import '../utils/mixins.scss';
+
+
+
+main {
+    @include flex-column;
+}
+
+.title-section {
+    // No funciona
+    background-image: url('../../assets/images/logo-big.png');
+    max-width: 1100px;
+    @include flex-row;
+    margin: 3rem 0;
+}
+
+.logo-big {
+    width: 70%;;
+}
