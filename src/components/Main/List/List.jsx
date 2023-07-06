@@ -6,10 +6,12 @@ const List = ({list}) => {
 
   return (
     <>
-      {list.length > 0 ? list.map(pokemon=>{
-        return <Card pokemon={pokemon} key={uuidv4()}/>
-      }) : <p>Enter the name of a pokemon</p>
-      }
+      <section className="list-section">
+        {list.length > 0 ? list.map(pokemon=>{
+          return <Card pokemon={pokemon} key={uuidv4()}/>
+        }) : <p>Enter the name of a pokemon</p>
+        }
+      </section>
     </>
   );
 };

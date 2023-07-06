@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 const Search = ({list, setList}) => {
 
   const [name, setName] = useState('');
-
+  const [inputValue, setInputValue] = useState('');
   
   useEffect(() => {
 
@@ -29,13 +29,19 @@ const Search = ({list, setList}) => {
     event.preventDefault();
     const searchName = event.target.name.value.toLowerCase()
     setName(searchName);
+    setInputValue('');
+  }
+
+  const handleChange = (event)=> {
+    event.preventDefault();
+    setInputValue(event.target.value);
   }
 
   return (
     <>
       <section className="form-section">
         <form onSubmit={handleSubmit}>
-          <input type="text" name="name" id="" placeholder="Name"/>
+          <input type="text" name="name" value={inputValue} placeholder="Name" onChange={handleChange}/>
           <button type="submit">Search</button>
         </form>
       </section>

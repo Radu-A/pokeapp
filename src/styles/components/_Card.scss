@@ -1,3 +1,29 @@
+.card-article {
+    padding: 0 1rem 1rem 1rem;
+    @include flex-column;
+    border: 1px solid $blue;
+    border-radius: 5px;
+}
+
 .card-image img {
     width: 150px;
+}
+
+.card-title {
+    width: 100%;
+    @include flex-row;
+    justify-content: space-between;
+    // gap: 1rem;
+    color: $blue;
+}
+
+.card-title h2 {
+    padding: 0;
+    margin: 0;
+}
+
+.card-article th {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: $blue;
 }
