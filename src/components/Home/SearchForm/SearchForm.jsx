@@ -19,8 +19,8 @@ const SearchForm = () => {
             name: data.name,
             url: data.sprites.other["official-artwork"].front_default,
             base_experience: data.base_experience,
-            height: data.height,
-            weight: data.weight
+            typeOne: data.types[0].type.name,
+            typeTwo: data.types[1] ? data.types[1].type.name : 'x'
           }
           updatePokeList(newPokemon)
         }

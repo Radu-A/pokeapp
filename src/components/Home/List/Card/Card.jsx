@@ -17,15 +17,15 @@ const Card = ({pokemon}) => {
             <thead>
               <tr>
                 <th>B.Exp.</th>
-                <th>Height</th>
-                <th>Weight</th>
+                <th>Type 1</th>
+                <th>Type 2</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td align="center">{pokemon.base_experience}</td>
-                <td align="center">{pokemon.height}</td>
-                <td align="center">{pokemon.weight}</td>
+                <td align="center">{pokemon.typeOne}</td>
+                <td align="center">{pokemon.typeTwo}</td>
               </tr>
             </tbody>
           </table>
