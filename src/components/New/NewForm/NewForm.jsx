@@ -1,11 +1,30 @@
 import { useForm } from "react-hook-form";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ListContext } from "../../../context/listContext";
+import { v4 as uuidv4 } from 'uuid';
 
 const NewForm = () => {
 
   const { pokeList, updatePokeList } = useContext(ListContext);
 
+  const [types, setTypes] = useState([]);
+
+  useEffect(() => {
+
+    const getPokemon = async () => {
+      try {
+          const resp = await fetch(`https://pokeapi.co/api/v2/type`);
+          const data = await resp.json();
+          setTypes(data.results);
+          console.log('Fetch to type');
+          console.log(types);
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getPokemon();
+  },[])
+  
   const { 
     register, 
     handleSubmit,
@@ -16,8 +35,8 @@ const NewForm = () => {
       name: "",
       url: "",
       base_experience: "",
-      height: "",
-      weight: ""
+      typeOne: "",
+      typeTwo: ""
     }
    });
 
@@ -37,11 +56,15 @@ const NewForm = () => {
       <input {...register("base_experience") } placeholder="Base experience" />
       <p>{errors.base_experience && errors.base_experience.message}</p>
 
-      <input {...register("height") } placeholder="Height" />
-      <p>{errors.height && errors.height.message}</p>
+      <select {...register("typeOne")}>
+        {types && types.map(type=><option key={uuidv4()} value="typeOne">{type.name}</option>)}
+      </select>
+      <p>{errors.base_experience && errors.base_experience.message}</p>
 
-      <input {...register("weight") } placeholder="Weight" />
-      <p>{errors.weight && errors.weight.message}</p>
+      <select {...register("typeTwo")}>
+        {types && types.map(type=><option key={uuidv4()} value="typeTwo">{type.name}</option>)}
+      </select>
+      <p>{errors.base_experience && errors.base_experience.message}</p>
 
       <button type="submit">ADD</button>
     </form>
