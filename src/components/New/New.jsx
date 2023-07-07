@@ -1,7 +1,12 @@
 import React from "react";
+import NewForm from "./NewForm/NewForm";
 
 const New = () => {
-  return <div>New</div>;
+  return (
+    <section className="new-section">
+      <NewForm />
+    </section>
+  );
 };
 
 export default New;

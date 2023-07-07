@@ -11,19 +11,23 @@ const Card = ({pokemon}) => {
             <h3>{pokemon.name}</h3>
           </div>
           <div className="card-image">
-            <img src={pokemon.sprites.other["official-artwork"].front_default} alt="" />
+            <img src={pokemon.url} alt="" />
           </div>
           <table>
-            <tr>
-              <th>B.Exp.</th>
-              <th>Height</th>
-              <th>Weight</th>
-            </tr>
-            <tr>
-              <td align="center">{pokemon.base_experience}</td>
-              <td align="center">{pokemon.height}</td>
-              <td align="center">{pokemon.weight}</td>
-            </tr>
+            <thead>
+              <tr>
+                <th>B.Exp.</th>
+                <th>Height</th>
+                <th>Weight</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td align="center">{pokemon.base_experience}</td>
+                <td align="center">{pokemon.height}</td>
+                <td align="center">{pokemon.weight}</td>
+              </tr>
+            </tbody>
           </table>
         </article>
       </>

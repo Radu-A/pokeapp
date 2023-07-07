@@ -1,28 +1,27 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { ListContext } from "../../../context/listContext";
 
-const SearchForm = ({list, setList}) => {
+const SearchForm = () => {
 
   const [name, setName] = useState('');
   const [inputValue, setInputValue] = useState('');
-  
+  const { pokeList, updatePokeList } = useContext(ListContext);
+
   useEffect(() => {
 
     const getPokemon = async () => {
-      console.log(name)
       try {
         if (name.length > 0) {
           const resp = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
           const data =await resp.json();
-          setList([...list, data])
+          updatePokeList(data)
         }
       } catch (error) {
         console.log(error)
       }
     }
-    
     getPokemon();
-    
   },[name])
   
   const handleSubmit = (event)=> {
@@ -37,7 +36,7 @@ const SearchForm = ({list, setList}) => {
     setInputValue(event.target.value);
     if (inputValue !== '') {
       setTimeout(() => {
-        const searchName = event.target.name.value.toLowerCase()
+        const searchName = event.target.value.toLowerCase()
         setName(searchName);
         setInputValue('');
       }, 3000);
