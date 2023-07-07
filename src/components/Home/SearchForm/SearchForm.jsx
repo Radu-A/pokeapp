@@ -16,6 +16,7 @@ const SearchForm = () => {
           const resp = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
           const data =await resp.json();
           const newPokemon = {
+            id: data.id,
             name: data.name,
             url: data.sprites.other["official-artwork"].front_default,
             base_experience: data.base_experience,
