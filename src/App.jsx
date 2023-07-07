@@ -10,14 +10,7 @@ function App() {
 
   const [pokeList, setPokeList] = useState([])
 
-  const updatePokeList = (data)=> {
-    const newPokemon = {
-      name: data.name,
-      url: data.sprites.other["official-artwork"].front_default,
-      base_experience: data.base_experience,
-      height: data.height,
-      weight: data.weight
-    }
+  const updatePokeList = (newPokemon)=> {
     console.log(newPokemon);
     setPokeList([...pokeList, newPokemon])
   }

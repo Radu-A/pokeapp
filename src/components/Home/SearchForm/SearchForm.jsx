@@ -15,7 +15,14 @@ const SearchForm = () => {
         if (name.length > 0) {
           const resp = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
           const data =await resp.json();
-          updatePokeList(data)
+          const newPokemon = {
+            name: data.name,
+            url: data.sprites.other["official-artwork"].front_default,
+            base_experience: data.base_experience,
+            height: data.height,
+            weight: data.weight
+          }
+          updatePokeList(newPokemon)
         }
       } catch (error) {
         console.log(error)
