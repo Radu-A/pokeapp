@@ -11,17 +11,16 @@ const NewForm = () => {
 
   useEffect(() => {
 
-    const getPokemon = async () => {
+    const getTypes = async () => {
       try {
-        console.log('estoy haciendo fetch')
-          const resp = await fetch(`https://pokeapi.co/api/v2/type`);
-          const data = await resp.json();
-          setTypes(data.results);
+        const resp = await fetch(`https://pokeapi.co/api/v2/type`);
+        const data = await resp.json();
+        setTypes(data.results);
       } catch (error) {
         console.log(error)
       }
     }
-    getPokemon();
+    getTypes();
   },[])
   
   const { 
