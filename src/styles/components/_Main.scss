@@ -8,6 +8,10 @@ main {
     gap: 3rem;
 }
 
+h1 {
+    color: $blue;
+}
+
 .title-section {
     // No funciona
     background-image: url('../../assets/images/logo-big.png');

@@ -1,0 +1,18 @@
+.new-form-section {
+    @include flex-column;
+}
+
+.new-form {
+    max-width: 250px;
+}
+
+.new-form input, .new-form select {
+    padding: 0;
+    width: 100%;
+}
+
+.error-message {
+    color: $red;
+    font-size: 0.8rem;
+    font-weight: 500;
+}

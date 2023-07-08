@@ -5,6 +5,8 @@ import SearchForm from "./SearchForm/SearchForm";
 
 const Home = () => {
 
+  const initialMessage = 'Enter the name of a pokemon';
+
   return (
     <>
       <section className="title-section">
@@ -12,7 +14,7 @@ const Home = () => {
         <h1>App</h1>
       </section>
       <SearchForm />
-      <List />
+      <List initialMessage={initialMessage}/>
     </>
   );
 };

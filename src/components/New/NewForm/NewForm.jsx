@@ -39,35 +39,41 @@ const NewForm = () => {
     }
    });
 
-  console.log(watch());
+  // console.log(watch());
 
   return (
+    <>
     <section className="new-form-section">
-      <form onSubmit={handleSubmit(data=>{
+      <h1>Create your own pokemon</h1>
+      <form className="new-form" onSubmit={handleSubmit(data=>{
       updatePokeList(data);
     })}>
-      <input {...register("name", {required: 'This is required.'}) } placeholder="Name" />
-      <p>{errors.name && errors.name.message}</p>
+      <input {...register("name", {required: 'This is required', minLength: {
+        value: 3,
+        message: 'At least 3 characters'
+      }}) } placeholder="Name" />
+      <p className="error-message">{errors.name && errors.name.message}</p>
 
-      <input {...register("url", {required: 'This is required.'}) } placeholder="Url" />
-      <p>{errors.url && errors.url.message}</p>
+      <input {...register("url", {required: 'This is required'}) } placeholder="Url" />
+      <p className="error-message">{errors.url && errors.url.message}</p>
 
-      <input {...register("base_experience") } placeholder="Base experience" />
-      <p>{errors.base_experience && errors.base_experience.message}</p>
+      <input {...register("base_experience", {required: 'This is required'}) } placeholder="Base experience" />
+      <p className="error-message">{errors.base_experience && errors.base_experience.message}</p>
 
-      <select {...register("typeOne")}>
+      <select {...register("typeOne", {required: 'This is required'})}>
         {types && types.map(type=><option key={uuidv4()} value={type.name}>{type.name}</option>)}
       </select>
-      <p>{errors.typeOne && errors.typeOne.message}</p>
+      <p className="error-message">{errors.typeOne && errors.typeOne.message}</p>
 
       <select {...register("typeTwo")}>
         {types && types.map(type=><option key={uuidv4()} value={type.name}>{type.name}</option>)}
       </select>
-      <p>{errors.typeTwo && errors.typeTwo.message}</p>
+      <p className="error-message">{errors.typeTwo && errors.typeTwo.message}</p>
 
       <button type="submit">ADD</button>
     </form>
     </section>
+    </>
   )
 };
 

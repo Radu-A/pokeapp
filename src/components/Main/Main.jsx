@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from "../Home/Home";
 import New from "../New/New";
 import Details from "../Details/Details";
+import { useState } from 'react';
 
 const Main = () => {
 
