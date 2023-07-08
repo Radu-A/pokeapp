@@ -1,8 +1,15 @@
+@import '../utils/variables.scss';
+@import '../utils/mixins.scss';
+
 .logo-small {
     width: 120px;
 }
 
+.MuiContainer-root {
+    background-color: $blue;
+}
+
 .nav-link {
     text-decoration: none;
-    color: inherit;
+    color: $blue;
 }

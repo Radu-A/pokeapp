@@ -19,3 +19,11 @@ main {
 .logo-big {
     width: 70%;;
 }
+
+button {
+    height: 1.3rem;
+    background-color: $blue;
+    color: white;
+    border: none;
+    border-radius: 2px;
+}

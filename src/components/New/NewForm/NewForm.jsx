@@ -13,11 +13,10 @@ const NewForm = () => {
 
     const getPokemon = async () => {
       try {
+        console.log('estoy haciendo fetch')
           const resp = await fetch(`https://pokeapi.co/api/v2/type`);
           const data = await resp.json();
           setTypes(data.results);
-          console.log('Fetch to type');
-          console.log(types);
       } catch (error) {
         console.log(error)
       }
@@ -57,14 +56,14 @@ const NewForm = () => {
       <p>{errors.base_experience && errors.base_experience.message}</p>
 
       <select {...register("typeOne")}>
-        {types && types.map(type=><option key={uuidv4()} value="typeOne">{type.name}</option>)}
+        {types && types.map(type=><option key={uuidv4()} value={type.name}>{type.name}</option>)}
       </select>
-      <p>{errors.base_experience && errors.base_experience.message}</p>
+      <p>{errors.typeOne && errors.typeOne.message}</p>
 
       <select {...register("typeTwo")}>
-        {types && types.map(type=><option key={uuidv4()} value="typeTwo">{type.name}</option>)}
+        {types && types.map(type=><option key={uuidv4()} value={type.name}>{type.name}</option>)}
       </select>
-      <p>{errors.base_experience && errors.base_experience.message}</p>
+      <p>{errors.typeTwo && errors.typeTwo.message}</p>
 
       <button type="submit">ADD</button>
     </form>

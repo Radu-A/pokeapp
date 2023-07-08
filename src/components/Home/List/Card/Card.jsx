@@ -2,7 +2,6 @@ import React from "react";
 
 const Card = ({pokemon}) => {
 
-  console.log(pokemon)
   if (pokemon) {
     return (
       <>
