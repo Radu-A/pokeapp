@@ -3,11 +3,14 @@ import React from "react";
 const Card = ({pokemon}) => {
 
   if (pokemon) {
+
+    const url = `http://localhost:5173/details?name=${pokemon.name}`
+
     return (
       <>
         <article className="card-article">
           <div className="card-title">
-            <h3>{pokemon.name}</h3>
+            <h3><a href={url}>{pokemon.name}</a></h3>
           </div>
           <div className="card-image">
             <img src={pokemon.url} alt="" />

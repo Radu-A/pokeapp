@@ -7,6 +7,11 @@
     gap: 2rem;
 }
 
+.things-div {
+    @include flex-row;
+    align-items: flex-start;
+}
+
 .image-div img {
     max-width: 100vw;
 }
