@@ -3,6 +3,7 @@ import { useLocation } from "react-router";
 
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts';
 
+// Recharts
 const colors = ['#2a73b9', '#00C49F', '#ffcb05', '#FF8042', '#ec3434', 'pink'];
 
 const getPath = (x, y, width, height) => {
@@ -12,7 +13,27 @@ const getPath = (x, y, width, height) => {
   Z`;
 };
 
-
+// Type colors
+const colours = {
+	normal: '#A8A77A',
+	fire: '#EE8130',
+	water: '#6390F0',
+	electric: '#F7D02C',
+	grass: '#7AC74C',
+	ice: '#96D9D6',
+	fighting: '#C22E28',
+	poison: '#A33EA1',
+	ground: '#E2BF65',
+	flying: '#A98FF3',
+	psychic: '#F95587',
+	bug: '#A6B91A',
+	rock: '#B6A136',
+	ghost: '#735797',
+	dragon: '#6F35FC',
+	dark: '#705746',
+	steel: '#B7B7CE',
+	fairy: '#D685AD',
+};
 
 const Details = () => {
 
@@ -43,7 +64,7 @@ const Details = () => {
             moveOne: data.moves[0].move.name,
             moveTwo: data.moves[1].move.name,
             typeOne: data.types[0].type.name,
-            typeTwo: data.types[1] ? data.types[1].type.name : 'x',
+            typeTwo: data.types[1] ? data.types[1].type.name : '',
             stats: {
               hp: data.stats[0].base_stat,
               atk: data.stats[1].base_stat,
@@ -94,23 +115,50 @@ const Details = () => {
     
   }, [])
 
+  // Rechart
+
   const TriangleBar = (props) => {
     const { fill, x, y, width, height } = props;
   
     return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
   };
   
+  const typeOneClass = `type-div ${pokemon.typeOne}`;
+  const typeTwoClass = `type-div ${pokemon.typeTwo}`;
+
+  const colours = {
+    normal: '#A8A77A',
+    fire: '#EE8130',
+    water: '#6390F0',
+    electric: '#F7D02C',
+    grass: '#7AC74C',
+    ice: '#96D9D6',
+    fighting: '#C22E28',
+    poison: '#A33EA1',
+    ground: '#E2BF65',
+    flying: '#A98FF3',
+    psychic: '#F95587',
+    bug: '#A6B91A',
+    rock: '#B6A136',
+    ghost: '#735797',
+    dragon: '#6F35FC',
+    dark: '#705746',
+    steel: '#B7B7CE',
+    fairy: '#D685AD',
+  };
 
   return (
     <>
-      <section className="detail-section">
+      <section className="details-section">
         {pokemon.name && (
             <>
             <article className="title-article">
               <h1>{pokemon.name.toUpperCase()}</h1>
-              <div className="type-div">
-                <h3>{pokemon.typeOne}</h3>
-                {pokemon.typeTwo && <h3>{pokemon.typeTwo}</h3>}
+              <div className="types-div">
+                <div className="type-div" style={{"background-color": colours[pokemon.typeOne]}}>
+                  <h3>{pokemon.typeOne}</h3>
+                </div>
+                  {pokemon.typeTwo && <div className="type-div" style={{"background-color": colours[pokemon.typeTwo]}}><h3>{pokemon.typeTwo}</h3></div>}
               </div>
             </article>
             <article className="description-article">
@@ -121,11 +169,11 @@ const Details = () => {
                 <div className="things-div">
                   <div>
                     <h3>Height</h3>
-                    <p>{pokemon.height}</p>
+                    <p>{pokemon.height}0 cm</p>
                   </div>
                   <div>
                     <h3>Weight</h3>
-                    <p>{pokemon.weight}</p>
+                    <p>{pokemon.weight} kg</p>
                   </div>
                   <div>
                     <h3>Moves</h3>

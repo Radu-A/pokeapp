@@ -1,22 +1,68 @@
-.title-article h1 {
-    margin-bottom: 0;
+.details-section {
+    margin-top: 3rem;
+    border: 3px solid $blue;
+    border-radius: 5px;
 }
 
-.type-div {
+.title-article h1 {
+    @include flex-row;
+    margin: 0;
+    height: 5rem;
+    border-bottom: 3px solid $blue;
+    border-radius: 5px;
+}
+
+.types-div {
+    margin-top: 1rem;
     @include flex-row;
     gap: 2rem;
 }
 
-.things-div {
+.type-div {
     @include flex-row;
-    align-items: flex-start;
+    height: 2rem;
+    width: 6rem;
+    border: 3px solid $blue;
+    border-radius: 5px;
+}
+
+.type-div h3 {
+    margin: 0;
+    color: white;
+}
+
+.description-article {
+    @include flex-row;
 }
 
 .image-div img {
     max-width: 100vw;
 }
 
+.info-div {
+    border-radius: 5px;
+}
+
 .info-div tspan {
     font-size: 0.7rem;
     font-weight: 600;
+}
+
+.things-div {
+    @include flex-row;
+    align-items: flex-start;
+    gap: 2rem;
+    // justify-content: space-around;
+}
+
+.things-div h3 {
+    color: $blue;
+}
+
+.things-div p {
+    color: $red;
+}
+
+.recharts-wrapper {
+    margin-right: 2.5rem;
 }
