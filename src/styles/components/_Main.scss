@@ -8,9 +8,14 @@ main {
     gap: 3rem;
 }
 
+section {
+    box-sizing: border-box;
+}
+
 h1 {
     color: $blue;
     font-size: 3rem;
+    text-align: center;
 }
 
 .title-section {
