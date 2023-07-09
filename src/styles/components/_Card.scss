@@ -21,6 +21,15 @@
     text-align: center;
 }
 
+.card-title a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card-article a:hover {
+    font-size: 1.1rem;
+}
+
 .card-article th {
     font-size: 0.8rem;
     font-weight: 600;

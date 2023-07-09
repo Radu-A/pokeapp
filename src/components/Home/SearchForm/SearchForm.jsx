@@ -8,6 +8,18 @@ const SearchForm = () => {
   const [inputValue, setInputValue] = useState('');
   const { pokeList, updatePokeList } = useContext(ListContext);
 
+  // Trying to use localstorage
+  useEffect(() => {
+    if (localStorage.pokeList) {
+      const loadData = async()=> {
+        console.log(JSON.parse(localStorage.pokeList));
+        const [localData] = await JSON.parse(localStorage.pokeList)
+        updatePokeList(localData);
+      }
+      loadData();
+    }
+  }, [])
+
   useEffect(() => {
 
     const getPokemon = async () => {
@@ -23,7 +35,9 @@ const SearchForm = () => {
             typeOne: data.types[0].type.name,
             typeTwo: data.types[1] ? data.types[1].type.name : 'x'
           }
-          updatePokeList(newPokemon)
+          updatePokeList(newPokemon);
+          // Localstorage
+          localStorage.setItem("pokeList", JSON.stringify(pokeList));
         }
       } catch (error) {
         console.log(error)
