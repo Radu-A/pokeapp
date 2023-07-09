@@ -4,7 +4,7 @@ const Card = ({pokemon}) => {
 
   if (pokemon) {
 
-    const url = `http://localhost:5173/details?name=${pokemon.name}`
+    const url = `https://64ab0ad4c6d6e65a39dcbf01--incomparable-macaron-afd876.netlify.app/details?name=${pokemon.name}`
 
     return (
       <>
