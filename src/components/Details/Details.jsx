@@ -48,39 +48,27 @@ const Details = () => {
         const newChartData = [
           {
             name: 'HP',
-            uv: newPokemon.stats.hp,
-            pv: 2400,
-            amt: 2400,
+            uv: newPokemon.stats.hp
           },
           {
             name: 'ATK',
-            uv: newPokemon.stats.atk,
-            pv: 1398,
-            amt: 2210,
+            uv: newPokemon.stats.atk
           },
           {
             name: 'DEF',
-            uv: newPokemon.stats.def,
-            pv: 9800,
-            amt: 2290,
+            uv: newPokemon.stats.def
           },
           {
             name: 'SATK',
-            uv: newPokemon.stats.satk,
-            pv: 3908,
-            amt: 2000,
+            uv: newPokemon.stats.satk
           },
           {
             name: 'SDEF',
-            uv: newPokemon.stats.sdef,
-            pv: 4800,
-            amt: 2181,
+            uv: newPokemon.stats.sdef
           },
           {
             name: 'SPD',
-            uv: newPokemon.stats.spd,
-            pv: 3800,
-            amt: 2500,
+            uv: newPokemon.stats.spd
           }
         ];
         setChartData(newChartData);
