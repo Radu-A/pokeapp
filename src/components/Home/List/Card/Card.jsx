@@ -5,13 +5,7 @@ const Card = ({pokemon}) => {
   const [url, setUrl] = useState('');
 
   useEffect(()=> {
-    
-    if (window.location.href === 'http://localhost:5173/') {
-      setUrl(`http://localhost:5173/details?name=${pokemon.name}`);
-    } else {
-      setUrl(`https://mellow-elf-6a6bb5.netlify.app/details?name=${pokemon.name}`);
-    }
-
+    setUrl(`${window.location.href}details?name=${pokemon.name}`);
   }, [])
 
   if (pokemon) {
