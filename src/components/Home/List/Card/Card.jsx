@@ -6,7 +6,6 @@ const Card = ({pokemon}) => {
 
   useEffect(()=> {
     setUrl(`${window.location.href}details?name=${pokemon.name}`);
-    setUrl(`${window.location.href}details?name=${pokemon.name}`);
   }, [])
 
   if (pokemon) {
