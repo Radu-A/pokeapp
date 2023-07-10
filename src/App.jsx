@@ -9,7 +9,6 @@ import Footer from './components/Footer/Footer';
 function App() {
 
   const [pokeList, setPokeList] = useState([])
-  const [message, setMessage] = useState(<></>)
 
   const updatePokeList = (newPokemon)=> {
     setPokeList([...pokeList, newPokemon])
@@ -17,14 +16,6 @@ function App() {
   const listData = {
     pokeList,
     updatePokeList
-  }
-
-  const updateMessage = (newMessage)=> {
-    setMessage(newMessage)
-  }
-  const messageData = {
-    message,
-    updateMessage
   }
 
   return (

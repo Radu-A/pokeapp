@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Card = ({pokemon}) => {
+  
+  const [url, setUrl] = useState('');
+
+  useEffect(()=> {
+    
+    if (window.location.href === 'http://localhost:5173/') {
+      setUrl(`http://localhost:5173/details?name=${pokemon.name}`);
+    } else {
+      setUrl(`https://mellow-elf-6a6bb5.netlify.app/details?name=${pokemon.name}`);
+    }
+
+  }, [])
 
   if (pokemon) {
 
-    const url = `http://localhost:5173/details?name=${pokemon.name}`
+    console.log(window.location.href);
 
     return (
       <>
