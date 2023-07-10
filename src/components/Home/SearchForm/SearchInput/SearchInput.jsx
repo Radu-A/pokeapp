@@ -4,7 +4,7 @@ const SearchInput = ({setName}) => {
 
   const [timeoutId, setTimeoutId] = useState('');
 
-  const ref = useRef(null);
+  const ref = useRef('');
   const handleChange = () => {
     clearTimeout(timeoutId)
     const timer = setTimeout(() => {

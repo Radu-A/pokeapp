@@ -6,7 +6,9 @@ footer {
     justify-content: right;
 }
 
-a {
+footer a {
+    bottom: 0;
+    position: absolute;
     text-decoration: none;
     font-size: 0.7rem;
     color: inherit;

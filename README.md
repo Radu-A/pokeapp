@@ -71,9 +71,9 @@ Phase 2
 
 ### Screenshot
 
-![](./src/assets/screenshots/pokeapp-home.png)
-![](./src/assets/screenshots/pokeapp-details.png)
-![](./src/assets/screenshots/pokeapp-new.png)
+![](./public/screenshots/pokeapp-home.png)
+![](./public/screenshots/pokeapp-details.png)
+![](./public/screenshots/pokeapp-new.png)
 
 ### Links
 
