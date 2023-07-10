@@ -2,23 +2,12 @@ import React from "react";
 import { useState, useEffect, useContext } from "react";
 import { ListContext } from "../../../context/listContext";
 
+import SearchInput from "./SearchInput/SearchInput";
+
 const SearchForm = () => {
 
   const [name, setName] = useState('');
-  const [inputValue, setInputValue] = useState('');
   const { pokeList, updatePokeList } = useContext(ListContext);
-
-  // Trying to use localstorage
-  useEffect(() => {
-    if (localStorage.pokeList) {
-      const loadData = async()=> {
-        console.log(JSON.parse(localStorage.pokeList));
-        const [localData] = await JSON.parse(localStorage.pokeList)
-        updatePokeList(localData);
-      }
-      loadData();
-    }
-  }, [])
 
   useEffect(() => {
 
@@ -36,8 +25,6 @@ const SearchForm = () => {
             typeTwo: data.types[1] ? data.types[1].type.name : 'x'
           }
           updatePokeList(newPokemon);
-          // Localstorage
-          localStorage.setItem("pokeList", JSON.stringify(pokeList));
         }
       } catch (error) {
         console.log(error)
@@ -45,33 +32,11 @@ const SearchForm = () => {
     }
     getPokemon();
   },[name])
-  
-  const handleSubmit = (event)=> {
-    event.preventDefault();
-    const searchName = event.target.name.value.toLowerCase()
-    setName(searchName);
-    setInputValue('');
-  }
-
-  const handleChange = (event)=> {
-    event.preventDefault();
-    setInputValue(event.target.value);
-    if (inputValue !== '') {
-      setTimeout(() => {
-        const searchName = event.target.value.toLowerCase()
-        setName(searchName);
-        setInputValue('');
-      }, 3000);
-    }
-  }
 
   return (
     <>
       <section className="form-section">
-        <form onSubmit={handleSubmit}>
-          <input type="text" name="name" value={inputValue} placeholder="Name" onChange={handleChange}/>
-          <button type="submit">Search</button>
-        </form>
+        <SearchInput setName={setName} />
       </section>
     </>
   );

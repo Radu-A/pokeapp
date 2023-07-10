@@ -11,7 +11,6 @@ function App() {
   const [pokeList, setPokeList] = useState([])
 
   const updatePokeList = (newPokemon)=> {
-    console.log(newPokemon);
     setPokeList([...pokeList, newPokemon])
   }
 

@@ -19,8 +19,6 @@ h1 {
 }
 
 .title-section {
-    // No funciona
-    background-image: url('../../assets/images/logo-big.png');
     max-width: 1100px;
     @include flex-row;
     margin-top: 3rem;
