@@ -3,8 +3,9 @@ import React from "react";
 const Footer = () => {
   return (
     <>
-      <section className='footer-section'>
-      </section>
+      <footer>
+      <a href="https://www.flaticon.com/free-icons/pokemon" title="pokemon icons">Pokemon icons created by Those Icons - Flaticon</a>
+      </footer>
     </>
   );
 };
