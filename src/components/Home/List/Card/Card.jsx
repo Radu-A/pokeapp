@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Card = ({pokemon}) => {
-  
-  const [url, setUrl] = useState('');
 
-  useEffect(()=> {
-    setUrl(`${window.location.href}details?name=${pokemon.name}`);
-  }, [])
+  const url = `/details?name=${pokemon.name}`
 
   if (pokemon) {
 
@@ -16,7 +13,7 @@ const Card = ({pokemon}) => {
       <>
         <article className="card-article">
           <div className="card-title">
-            <h3><a href={url}>{pokemon.name}</a></h3>
+            <h3><Link className="nav-link" to={url}>{pokemon.name}</Link></h3>
           </div>
           <div className="card-image">
             <img src={pokemon.url} alt="" />
