@@ -7,8 +7,8 @@ import SearchInput from "./SearchInput/SearchInput";
 const SearchForm = () => {
 
   const [name, setName] = useState('');
-  const [errorMessage, setErrorMessage] = useState(<></>);
-  const { pokeList, updatePokeList } = useContext(ListContext);
+  const [errorMessage, setErrorMessage] = useState(null);
+  const { updatePokeList } = useContext(ListContext);
 
   useEffect(() => {
 
@@ -29,10 +29,10 @@ const SearchForm = () => {
         }
       } catch (error) {
         console.log(error);
-        const newError = <><p>This pokemon doesn't exists</p></>
+        const newError = <p>This pokemon doesn't exists</p>
         setErrorMessage(newError);
         setTimeout(() => {
-          setErrorMessage(<></>)
+          setErrorMessage(null)
         }, 3000);
       }
     }

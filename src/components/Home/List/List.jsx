@@ -5,7 +5,7 @@ import { ListContext } from "../../../context/listContext";
 
 const List = ({initialMessage}) => {
 
-  const { pokeList, updatePokeList } = useContext(ListContext);
+  const { pokeList } = useContext(ListContext);
 
   return (
     <>
