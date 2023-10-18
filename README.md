@@ -78,7 +78,7 @@ Phase 2
 ### Links
 
 - Solution URL: (https://github.com/Radu-A/pokeapp)
-- Live Site URL: (https://incomparable-macaron-afd876.netlify.app/)
+- Live Site URL: (https://poke-listing.netlify.app/)
 
 ## My process
 
